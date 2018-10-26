@@ -15,13 +15,20 @@ def calculate(arg):
                 result = val1 + val2
             elif token == '-':
                 result = val1 - val2
+            elif token == '*':
+                result = val1 * val2
             stack.append(result)
+    if len(stack) > 1:
+        raise ValueError("Too many arguments on the stack")
     return stack[0]
 
 def main():
     while True:
-        result = calculate(input("rpn calc> "))
-        print(result)
+        try:
+            result = calculate(input("rpn calc> "))
+            print(result)
+        except ValueError:
+            pass
 
 if __name__ == '__main__':
     main()
