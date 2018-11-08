@@ -17,6 +17,11 @@ def calculate(arg):
                 result = val1 - val2
             elif token == '*':
                 result = val1 * val2
+            elif token == '/':
+                if val2 == 0:
+                    raise ValueError("Can't divide by 0")
+                else:
+                    result = val1 / val2
             stack.append(result)
     if len(stack) > 1:
         raise ValueError("Too many arguments on the stack")
