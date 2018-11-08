@@ -22,6 +22,21 @@ def calculate(arg):
                     raise ValueError("Can't divide by 0")
                 else:
                     result = val1 / val2
+            elif token == '^':
+                result = 1
+                if val2 < 0:
+                    val2 = val2 * -1
+                    while val2 > 0:
+                        result = val1 * result
+                        val2 = val2 - 1
+                    if result == 0:
+                        raise ValueError("Can't divide by 0")
+                    else:
+                        result = 1 / result
+                elif val2 > 0:
+                    while val2 > 0:
+                        result = val1 * result
+                        val2 = val2 - 1
             stack.append(result)
     if len(stack) > 1:
         raise ValueError("Too many arguments on the stack")
