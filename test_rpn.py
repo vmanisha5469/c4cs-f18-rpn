@@ -12,5 +12,5 @@ class TestBasics(unittest.TestCase):
         with self.assertRaises(ValueError):
             result = rpn.calculate("1 2 3 +")
     def test_carrot(self):
-        result = rpn.calculator("2 4 ^")
+        result = rpn.calculate("2 4 ^")
         self.assertEqual(16, result)
